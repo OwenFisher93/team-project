@@ -44,9 +44,13 @@ with open('pro-who-tweets.csv') as file:
 # -- Third filter: -- Remove the pattern 'of PRO who'
 # -- Suggested approach: -- Create another loop, and another conditional statement using a regular expression from the list you got from the previous filter. This time, save only those that DO NOT match the conditional statement. Print the length of the list.
 
+ofList = ['of he who', 'of she who', 'of it who', 'of him who', 'of her who', 'of they who', 'of them who', 'of we who', 'of us who', 'of you who']
 
 
-
+for tweet in list(tweets):
+  for str in ofList:
+    if (str) in tweet:
+      tweets.remove(tweet)
 
 # -- Fourth filter: -- Remove tweets where the pronoun 'it' preceeds the word 'who' by 2-4 words
 # -- Suggested approach: -- Write a regular expression that picks out this pattern. Using the list you generated from the previous filter, use create a loop with a conditional statement that removes this pattern. Print the length of the list.
